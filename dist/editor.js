@@ -21,7 +21,7 @@ module.exports = React.createClass({
   componentDidMount: function componentDidMount() {
     var _this = this;
 
-    var dom = this.getDOMNode();
+    var dom = React.findDOMNode(this);
     this.medium = new MediumEditor(dom, this.props.options);
     this.medium.subscribe('editableInput', function (e) {
       _this._updated = true;
