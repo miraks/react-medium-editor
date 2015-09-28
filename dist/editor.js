@@ -34,7 +34,8 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-    if (nextProps.text !== this.state.text && !this._updated) {
+    var dom = React.findDOMNode(this);
+    if (nextProps.text !== dom.innerHTML && !this._updated) {
       this.setState({ text: nextProps.text });
     }
 
